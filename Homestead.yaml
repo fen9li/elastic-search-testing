@@ -1,0 +1,25 @@
+ip: 192.168.10.10
+memory: 4096
+cpus: 1
+provider: virtualbox
+mariadb: true
+elasticsearch: 6
+authorize: ~/.ssh/id_rsa.pub
+ports:
+    - send: 9200
+      to: 9200
+      protocol: tcp
+keys:
+    - ~/.ssh/id_rsa
+folders:
+    -
+        map: /Users/frontend/Projects/elastic-search-testing
+        to: /home/vagrant/code
+sites:
+    -
+        map: homestead.test
+        to: /home/vagrant/code/public
+databases:
+    - homestead
+name: elastic-search-testing
+hostname: elastic-search-testing
